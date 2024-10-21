@@ -1,35 +1,28 @@
-
 <!DOCTYPE html>
-<html lang="{% block lang %}fr{% endblock %}">
+<html lang="{% block language %}fr{% endblock %}">
+
 <head>
-    {% block head %}
-        {% block meta %}{% endblock %}
-        <title>{% block title %}Title{% endblock %}</title>
-        {% block stylesheet %}{% endblock %}
-    {% endblock %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block stylesheets %}{% endblock %}
+
+    <title>{% block title %}{% endblock %}</title>
 </head>
-<body class={% block bodyClass %}{% endblock %}>{% block body %}
 
-{% block navBar %}
-    {% block connectBtn %} {% endblock %}
-{% endblock %}
+<body>
+{% block header %}{% endblock %}
 
-{% block content %}
-    {% block hero %}
-        {% block heroText %}{% endblock %}
-        {% block heroImg  %}{% endblock %}
-    {% endblock %}
+{% block navbar %}{% endblock %}
 
-    {% block sectionOne %}{% endblock %} {# Change these names as needed #}
-    {% block sectionTwo %}{% endblock %}
-    {% block sectionThree %}{% endblock %}
-
+{% block main %}
 
 {% endblock %}
+
 
 {% block footer %}{% endblock %}
+{% block copyright %}{% endblock %}
+{% block scripts %}{% endblock %}
+</body>
 
-{% block javascript %}{% endblock %}
-
-</body> {% endblock %}
 </html>
