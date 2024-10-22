@@ -1,0 +1,382 @@
+[
+    {
+        "id": 1,
+        "cat": "Living",
+        "item": "Double Chair",
+        "price": "550",
+        "priceRed": "499",
+        "img": "images/products/product1.jpg",
+        "amount": 50
+    },
+    {
+        "id": 2,
+        "cat": "Kitchen",
+        "item": "Dining Table",
+        "price": "600",
+        "priceRed": "499",
+        "img": "images/products/product5.jpg",
+        "amount": 50
+    },
+    {
+        "id": 3,
+        "cat": "Bedroom",
+        "item": "Mattress",
+        "price": "350",
+        "priceRed": "299",
+        "img": "images/products/product3.jpg",
+        "amount": 50
+    },
+    {
+        "id": 4,
+        "cat": "Bedroom",
+        "item": "Bed - King Size",
+        "price": "1100",
+        "priceRed": "899",
+        "img": "images/products/product4.jpg",
+        "amount": 50
+    },
+    {
+        "id": 5,
+        "cat": "Living",
+        "item": "Couple Sofa",
+        "price": "1100",
+        "priceRed": "699",
+        "img": "images/products/product2.jpg",
+        "amount": 50
+    },
+    {
+        "id": 6,
+        "cat": "Living",
+        "item": "Deluxe Recliner",
+        "price": "450",
+        "priceRed": "349",
+        "img": "images/products/product6.jpg",
+        "amount": 50
+    },
+    {
+        "id": 7,
+        "cat": "Outdoor",
+        "item": "Recliner Set",
+        "price": "450",
+        "priceRed": "399",
+        "img": "images/products/product7.jpg",
+        "amount": 50
+    },
+    {
+        "id": 8,
+        "cat": "Living",
+        "item": "Chair",
+        "price": "299",
+        "priceRed": "199",
+        "img": "images/products/product8.jpg",
+        "amount": 50
+    },
+    {
+        "id": 9,
+        "cat": "Living",
+        "item": "Stylish Chair",
+        "price": "349",
+        "priceRed": "299",
+        "img": "images/products/product9.jpg",
+        "amount": 50
+    },
+    {
+        "id": 10,
+        "cat": "Living",
+        "item": "Comfy Chair",
+        "price": "300",
+        "priceRed": "249",
+        "img": "images/products/product10.jpg",
+        "amount": 50
+    },
+    {
+        "id": 11,
+        "cat": "Bedroom",
+        "item": "Bed - Queen Size",
+        "price": "1100",
+        "priceRed": "899",
+        "img": "images/products/product11.jpg",
+        "amount": 50
+    },
+    {
+        "id": 12,
+        "cat": "Kitchen",
+        "item": "Side Table",
+        "price": "199",
+        "priceRed": "149",
+        "img": "images/products/product12.jpg",
+        "amount": 50
+    },
+    {
+        "id": 13,
+        "cat": "Living",
+        "item": "Coffee Table",
+        "price": "250",
+        "priceRed": "199",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 14,
+        "cat": "Bedroom",
+        "item": "Wardrobe",
+        "price": "800",
+        "priceRed": "699",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 15,
+        "cat": "Kitchen",
+        "item": "Bar Stool",
+        "price": "150",
+        "priceRed": "129",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 16,
+        "cat": "Outdoor",
+        "item": "Patio Umbrella",
+        "price": "250",
+        "priceRed": "199",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 17,
+        "cat": "Bedroom",
+        "item": "Nightstand",
+        "price": "100",
+        "priceRed": "79",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 18,
+        "cat": "Living",
+        "item": "Bookshelf",
+        "price": "400",
+        "priceRed": "349",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 19,
+        "cat": "Outdoor",
+        "item": "Outdoor Sofa",
+        "price": "750",
+        "priceRed": "649",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 20,
+        "cat": "Kitchen",
+        "item": "Kitchen Island",
+        "price": "900",
+        "priceRed": "799",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 21,
+        "cat": "Living",
+        "item": "TV Stand",
+        "price": "300",
+        "priceRed": "249",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 22,
+        "cat": "Bedroom",
+        "item": "Dresser",
+        "price": "500",
+        "priceRed": "449",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 23,
+        "cat": "Outdoor",
+        "item": "Hammock",
+        "price": "200",
+        "priceRed": "149",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 24,
+        "cat": "Kitchen",
+        "item": "Pantry Cabinet",
+        "price": "450",
+        "priceRed": "399",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 25,
+        "cat": "Living",
+        "item": "Sectional Sofa",
+        "price": "1200",
+        "priceRed": "999",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 26,
+        "cat": "Bedroom",
+        "item": "Futon",
+        "price": "350",
+        "priceRed": "299",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 27,
+        "cat": "Outdoor",
+        "item": "Picnic Table",
+        "price": "450",
+        "priceRed": "399",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 28,
+        "cat": "Kitchen",
+        "item": "Kitchen Cart",
+        "price": "300",
+        "priceRed": "249",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 29,
+        "cat": "Living",
+        "item": "Lounge Chair",
+        "price": "350",
+        "priceRed": "299",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 30,
+        "cat": "Outdoor",
+        "item": "Grill",
+        "price": "600",
+        "priceRed": "549",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 31,
+        "cat": "Bedroom",
+        "item": "Vanity Table",
+        "price": "450",
+        "priceRed": "399",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 32,
+        "cat": "Living",
+        "item": "Media Console",
+        "price": "500",
+        "priceRed": "449",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 33,
+        "cat": "Kitchen",
+        "item": "Dish Rack",
+        "price": "100",
+        "priceRed": "79",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 34,
+        "cat": "Outdoor",
+        "item": "Fire Pit",
+        "price": "350",
+        "priceRed": "299",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 35,
+        "cat": "Bedroom",
+        "item": "Trundle Bed",
+        "price": "650",
+        "priceRed": "599",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 36,
+        "cat": "Living",
+        "item": "Ottoman",
+        "price": "200",
+        "priceRed": "149",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 37,
+        "cat": "Kitchen",
+        "item": "Cutting Board Set",
+        "price": "80",
+        "priceRed": "69",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 38,
+        "cat": "Outdoor",
+        "item": "Garden Bench",
+        "price": "350",
+        "priceRed": "299",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 39,
+        "cat": "Living",
+        "item": "Loveseat",
+        "price": "600",
+        "priceRed": "549",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 40,
+        "cat": "Bedroom",
+        "item": "Bunk Bed",
+        "price": "700",
+        "priceRed": "649",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 41,
+        "cat": "Kitchen",
+        "item": "Wine Rack",
+        "price": "200",
+        "priceRed": "179",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 42,
+        "cat": "Outdoor",
+        "item": "Deck Chair",
+        "price": "180",
+        "priceRed": "149",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    }
+]
+
+
