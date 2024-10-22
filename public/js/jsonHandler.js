@@ -19,10 +19,12 @@ function handleJsonData(datas, direction, extra) {
         case "selectedCat" :
             buildByCatSelection(datas, extra);
             break;
-        case "articleGrid" :
-            buildArticleGrid(datas);
+        case "article_grid" :
+            const artData = datas.slice((datas.length -4),datas.length);
+            buildArticleGrid(artData,direction);
             break;
     }
 }
 
 getProductJson("categoryBuild");
+getProductJson("article_grid");

@@ -50,8 +50,11 @@ function buildByCatSelection(datas, category) {
 }
 
 function buildArticleGrid(datas, grid) {
+    showTest ? logThis("Building Article Grid", true) : null;
     showTest ? logThis("Grid : "+grid, false, "string") : null;
+    // Select the relevant grid
     const currentGrid = document.getElementById(grid);
+    // Assure that it's empty
     let i = 1;
     while (currentGrid.firstChild) {
         showTest ? logThis(`removing ${grid} child : ` + i) : null;
@@ -59,7 +62,54 @@ function buildArticleGrid(datas, grid) {
         i++;
     }
 
+    datas.forEach(data => {
+        showTest ? logThis("Creating window for "+data["item"]) : null
+        // Parent Div for each element
+        const divExt = document.createElement("div");
+        divExt.classList.add("bg-white", "shadow", "rounded", "overflow-hidden", "group",);
+        // Div to hold the image
+        const divImg = document.createElement("div");
+        divImg.classList.add("relative");
+        divImg.innerHTML = `<img src="${data['img']}" alt="${data.item}">`
+        divExt.appendChild(divImg);
+        // Div to hold product info
+        const divLink = document.createElement("div");
+        divLink.classList.add("pt-4", "pb-3", "px-4",);
+        const link = document.createElement("a");
+        link.innerHTML = `<h4 class="uppercase font-medium 
+                                         text-xl mb-2 text-gray-800 
+                                         hover:text-primary transition"
+                              > ${data["item"]}
+                              </h4>`
+        divLink.appendChild(link);
+        const divPrice = document.createElement("div");
+        divPrice.classList.add("flex", "items-baseline", "mb-1", "space-x-2");
+        divPrice.innerHTML = `<p class="text-xl text-primary font-semibold">€ "+data["priceRed"]</p>
+                              <p class="text-sm text-gray-400 line-through">€ "+data["price"]</p>`
+        divLink.appendChild(divPrice);
+        // Div to display remaining articles
+        const divLeft = document.createElement("div");
+        divLeft.classList.add("flex", "items-center");
+        divLeft.innerHTML = `<div class="text-xs text-gray-500 ml-3">Remaining : <span id="amt${data['id']}">HERE</span></div>`;
+        // attaché au parent(divLink)
+        divLink.appendChild(divLeft);
+        // Finalement, le div pour contenir le bouton (Add to Cart)
+        const divBtn = document.createElement("div");
+        divBtn.innerHTML = `<button 
+                                class="block w-full py-1 text-center text-white 
+                                       bg-primary border border-primary rounded-b 
+                                       hover:bg-transparent hover:text-primary transition"
+                                id="ITEM${data['id']}"
+                                > 
+                                Add to cart
+                                </button>`// add onclick here
+        divLink.appendChild(divBtn);
+        divExt.appendChild(divLink);
 
+        currentGrid.appendChild(divExt)
+    });
+
+    showTest ? logThis("Article Grid built with "+datas.length+" windows", true) : null;
 }
 
 
