@@ -74,7 +74,7 @@ function buildArticleGrid(datas, grid) {
                showTest ? logThis("Calculating remaining items : "+remaining) : null;
             }
         }
-
+        data.saved = parseInt(data.price) - parseInt(data.priceRed);
         // Parent Div for each element
         const divExt = document.createElement("div");
         divExt.classList.add("bg-white", "shadow", "rounded", "overflow-hidden", "group",);
@@ -111,6 +111,7 @@ function buildArticleGrid(datas, grid) {
                                        bg-primary border border-primary rounded-b 
                                        hover:bg-transparent hover:text-primary transition"
                                 id="ITEM${data['id']}"
+                                onclick="addItemToStorage('${data.id}, ${data.cat}, ${data.item}, ${data.priceRed},${data.saved}, ${data.amount}')"
                                 > 
                                 Add to cart
                                 </button>`// add onclick here

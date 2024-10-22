@@ -113,7 +113,7 @@
         "item": "Coffee Table",
         "price": "250",
         "priceRed": "199",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -122,7 +122,7 @@
         "item": "Wardrobe",
         "price": "800",
         "priceRed": "699",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -131,7 +131,7 @@
         "item": "Bar Stool",
         "price": "150",
         "priceRed": "129",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -140,7 +140,7 @@
         "item": "Patio Umbrella",
         "price": "250",
         "priceRed": "199",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -149,7 +149,7 @@
         "item": "Nightstand",
         "price": "100",
         "priceRed": "79",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -158,7 +158,7 @@
         "item": "Bookshelf",
         "price": "400",
         "priceRed": "349",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -167,7 +167,7 @@
         "item": "Outdoor Sofa",
         "price": "750",
         "priceRed": "649",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -176,7 +176,7 @@
         "item": "Kitchen Island",
         "price": "900",
         "priceRed": "799",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -185,7 +185,7 @@
         "item": "TV Stand",
         "price": "300",
         "priceRed": "249",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -194,7 +194,7 @@
         "item": "Dresser",
         "price": "500",
         "priceRed": "449",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -203,7 +203,7 @@
         "item": "Hammock",
         "price": "200",
         "priceRed": "149",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -212,7 +212,7 @@
         "item": "Pantry Cabinet",
         "price": "450",
         "priceRed": "399",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -221,7 +221,7 @@
         "item": "Sectional Sofa",
         "price": "1200",
         "priceRed": "999",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -230,7 +230,7 @@
         "item": "Futon",
         "price": "350",
         "priceRed": "299",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -239,7 +239,7 @@
         "item": "Picnic Table",
         "price": "450",
         "priceRed": "399",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -248,7 +248,7 @@
         "item": "Kitchen Cart",
         "price": "300",
         "priceRed": "249",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -257,7 +257,7 @@
         "item": "Lounge Chair",
         "price": "350",
         "priceRed": "299",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -266,7 +266,7 @@
         "item": "Grill",
         "price": "600",
         "priceRed": "549",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -275,7 +275,7 @@
         "item": "Vanity Table",
         "price": "450",
         "priceRed": "399",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -284,7 +284,7 @@
         "item": "Media Console",
         "price": "500",
         "priceRed": "449",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -293,7 +293,7 @@
         "item": "Dish Rack",
         "price": "100",
         "priceRed": "79",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -302,7 +302,7 @@
         "item": "Fire Pit",
         "price": "350",
         "priceRed": "299",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -311,7 +311,7 @@
         "item": "Trundle Bed",
         "price": "650",
         "priceRed": "599",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -320,7 +320,7 @@
         "item": "Ottoman",
         "price": "200",
         "priceRed": "149",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -329,7 +329,7 @@
         "item": "Cutting Board Set",
         "price": "80",
         "priceRed": "69",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -338,7 +338,7 @@
         "item": "Garden Bench",
         "price": "350",
         "priceRed": "299",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -347,7 +347,7 @@
         "item": "Loveseat",
         "price": "600",
         "priceRed": "549",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -356,7 +356,7 @@
         "item": "Bunk Bed",
         "price": "700",
         "priceRed": "649",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -365,7 +365,7 @@
         "item": "Wine Rack",
         "price": "200",
         "priceRed": "179",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -374,7 +374,7 @@
         "item": "Deck Chair",
         "price": "180",
         "priceRed": "149",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     },
     {
@@ -383,7 +383,7 @@
         "item": "Medicine Cabinet",
         "price": "180",
         "priceRed": "149",
-        "img": "https://placehold.co/358x265",
+        "img": "images/products/placeholder.svg",
         "amount": 50
     }
 ]
