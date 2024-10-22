@@ -23,8 +23,16 @@ function handleJsonData(datas, direction, extra) {
             const artData = datas.slice((datas.length -4),datas.length);
             buildArticleGrid(artData,direction);
             break;
+        case "recommended_grid" :
+            const data = datas.slice((datas.length -4),datas.length);
+            const restData = datas.filter(item => !data.includes(item));
+            const shuffledData = restData.sort((a, b) => 0.5 - Math.random());
+            const recoData = shuffledData.slice(0,4);
+            buildArticleGrid(recoData,direction);
+            break;
     }
 }
 
 getProductJson("categoryBuild");
 getProductJson("article_grid");
+getProductJson("recommended_grid");
