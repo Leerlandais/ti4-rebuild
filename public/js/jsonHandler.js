@@ -1,4 +1,4 @@
-function getProductJson(){
+function getProductJson(direction){
     showTest ? logThis("Fetching JSON data", true, "JSON") : null;
     fetch("js/products.json")
         .then(function(response) {
@@ -6,9 +6,16 @@ function getProductJson(){
         })
         .then(function(datas) {
             showTest ? logThis("Received this :"+JSON.stringify(datas)) : null;
-            return datas;
+            handleJsonData(datas, direction);
         })
         .catch(error => console.error('Error fetching datas:', error));
 }
 
-getProductJson();
+function handleJsonData(datas, direction) {
+    switch (direction) {
+        case "categoryBuild" :
+            buildCategoryGrid(datas);
+    }
+}
+
+getProductJson("categoryBuild");

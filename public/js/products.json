@@ -271,7 +271,7 @@
     },
     {
         "id": 31,
-        "cat": "Bedroom",
+        "cat": "Bathroom",
         "item": "Vanity Table",
         "price": "450",
         "priceRed": "399",
@@ -334,7 +334,7 @@
     },
     {
         "id": 38,
-        "cat": "Outdoor",
+        "cat": "Garden",
         "item": "Garden Bench",
         "price": "350",
         "priceRed": "299",
@@ -343,7 +343,7 @@
     },
     {
         "id": 39,
-        "cat": "Living",
+        "cat": "Garden",
         "item": "Loveseat",
         "price": "600",
         "priceRed": "549",
@@ -372,6 +372,15 @@
         "id": 42,
         "cat": "Outdoor",
         "item": "Deck Chair",
+        "price": "180",
+        "priceRed": "149",
+        "img": "https://placehold.co/350x250",
+        "amount": 50
+    },
+    {
+        "id": 43,
+        "cat": "Bathroom",
+        "item": "Medicine Cabinet",
         "price": "180",
         "priceRed": "149",
         "img": "https://placehold.co/350x250",

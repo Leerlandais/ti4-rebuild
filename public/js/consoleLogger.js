@@ -20,6 +20,6 @@ function toggleLogs(){
 
 // Outputs a console.log/console.warn with message and optional expected result
 function logThis(msg, type = false, res = "") {
-    type ? console.warn(msg) : console.log(msg);
     res.length > 0 ? console.log("Expected result :", res) : null;
+    type ? console.warn(msg) : console.log(msg);
 }
