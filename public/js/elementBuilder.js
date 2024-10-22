@@ -63,8 +63,18 @@ function buildArticleGrid(datas, grid) {
         i++;
     }
 
+    let soldDatas = JSON.parse(localStorage.getItem("SOLD"));
+
+    let remaining = 0;
     datas.forEach(data => {
         showTest ? logThis("Creating window for "+data["item"]) : null
+        for (i = 0; i < soldDatas.length; i++) {
+            if (soldDatas[i]["id"] === data["id"]) {
+               remaining = parseInt(remaining = data["amount"]) - parseInt((soldDatas[i].sold));
+               showTest ? logThis("Calculating remaining items : "+remaining) : null;
+            }
+        }
+
         // Parent Div for each element
         const divExt = document.createElement("div");
         divExt.classList.add("bg-white", "shadow", "rounded", "overflow-hidden", "group",);
@@ -91,7 +101,7 @@ function buildArticleGrid(datas, grid) {
         // Div to display remaining articles
         const divLeft = document.createElement("div");
         divLeft.classList.add("flex", "items-center");
-        divLeft.innerHTML = `<div class="text-xs text-gray-500 ml-3">Remaining : <span id="amt${data['id']}">HERE</span></div>`;
+        divLeft.innerHTML = `<div class="text-xs text-gray-500 ml-3">Remaining : <span id="amt${data['id']}">${remaining}</span></div>`;
         // attaché au parent(divLink)
         divLink.appendChild(divLeft);
         // Finalement, le div pour contenir le bouton (Add to Cart)
