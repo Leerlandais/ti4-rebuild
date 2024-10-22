@@ -1,6 +1,5 @@
 function getProductJson(direction, extra=null){
     showTest ? logThis("Fetching JSON data", true, "JSON") : null;
-    console.log(direction, extra);
     fetch("js/products.json")
         .then(function(response) {
             return response.json();
@@ -19,6 +18,9 @@ function handleJsonData(datas, direction, extra) {
             break;
         case "selectedCat" :
             buildByCatSelection(datas, extra);
+            break;
+        case "articleGrid" :
+            buildArticleGrid(datas);
             break;
     }
 }

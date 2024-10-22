@@ -46,6 +46,19 @@ function buildByCatSelection(datas, category) {
     let articleList = datas.filter(data => data["cat"] === category);
     showTest ? logThis("Filtered data :"+JSON.stringify(articleList), false, `Articles in ${category} category`) : null;
 
+    buildArticleGrid(articleList, "article_grid");
+}
+
+function buildArticleGrid(datas, grid) {
+    showTest ? logThis("Grid : "+grid, false, "string") : null;
+    const currentGrid = document.getElementById(grid);
+    let i = 1;
+    while (currentGrid.firstChild) {
+        showTest ? logThis(`removing ${grid} child : ` + i) : null;
+        currentGrid.removeChild(currentGrid.firstChild);
+        i++;
+    }
+
 
 }
 
