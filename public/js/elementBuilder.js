@@ -16,6 +16,7 @@ function buildCategoryGrid(datas) {
     ));
     let distinctCats = [...new Set(categoryList)];
     showTest ? logThis("Category List : " + distinctCats, false, "List of individual categories") : null;
+    let direction = "selectedCat";
     distinctCats.forEach((cat) => {
         // Create main child div for each category
         const divExt = document.createElement("div");
@@ -30,7 +31,8 @@ function buildCategoryGrid(datas) {
                             <button class="absolute inset-0 bg-black bg-opacity-40 
                                            flex items-center justify-center text-xl 
                                            text-white font-roboto font-medium 
-                                           group-hover:bg-opacity-60 transition">
+                                           group-hover:bg-opacity-60 transition"
+                                    onclick='getProductJson("selectedCat", "${cat}")'>
                                            ${cat}
                             </button>`
 
@@ -39,6 +41,12 @@ function buildCategoryGrid(datas) {
     showTest ? logThis("Category Grid built with "+distinctCats.length+" windows", true) : null;
 }
 
+function buildByCatSelection(datas, category) {
+    showTest ? logThis("Building By Selected Category :"+category, true) : null;
+    let articleList = datas.filter(data => data["cat"] === category);
+    showTest ? logThis("Filtered data :"+JSON.stringify(articleList), false, `Articles in ${category} category`) : null;
 
+
+}
 
 
