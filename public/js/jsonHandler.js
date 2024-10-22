@@ -5,8 +5,8 @@ function getProductJson(direction, extra=null){
             return response.json();
         })
         .then(function(datas) {
-            showTest ? logThis("Received this :"+JSON.stringify(datas)) : null;
-            handleJsonData(datas, direction, extra);
+          //  showTest ? logThis("Received this :"+JSON.stringify(datas)) : null;
+                handleJsonData(datas, direction, extra);
         })
         .catch(error => console.error('Error fetching datas:', error));
 }
@@ -30,6 +30,9 @@ function handleJsonData(datas, direction, extra) {
             const recoData = shuffledData.slice(0,4);
             buildArticleGrid(recoData,direction);
             break;
+        case "storageSold" :
+            createSoldItems(datas);
+            break
     }
 }
 

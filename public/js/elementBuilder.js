@@ -1,3 +1,4 @@
+
 function buildCategoryGrid(datas) {
     showTest ? logThis("Building Category Grid", true) : null;
     // Retrieve parent
@@ -84,8 +85,8 @@ function buildArticleGrid(datas, grid) {
         divLink.appendChild(link);
         const divPrice = document.createElement("div");
         divPrice.classList.add("flex", "items-baseline", "mb-1", "space-x-2");
-        divPrice.innerHTML = `<p class="text-xl text-primary font-semibold">€ "+data["priceRed"]</p>
-                              <p class="text-sm text-gray-400 line-through">€ "+data["price"]</p>`
+        divPrice.innerHTML = `<p class="text-xl text-primary font-semibold">€ ${data["priceRed"]}</p>
+                              <p class="text-sm text-gray-400 line-through">€ ${data["price"]}</p>`
         divLink.appendChild(divPrice);
         // Div to display remaining articles
         const divLeft = document.createElement("div");
