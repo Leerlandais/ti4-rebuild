@@ -34,10 +34,10 @@ function addedItemAdjuster(item) {
 
 }
 
+
 // I'll apply this later to limit basket size
 function disableCheckout() {
     document.getElementById("checkoutButton").classList.add("isDisabled");
-    console.log("Disabled Checkout");
 }
 
 // Preparation of unified basket (Chair, Chair, Bed, Chair => Chair * 3, Bed)
@@ -66,8 +66,8 @@ function prepareUnifiedBasket() {
         });
 
         showTest ? logThis("Compressed Basket: "+ JSON.stringify(uniqueBasket)): null;
+//return(uniqueBasket);
     }
-
 }
 
 basketSize ? drawBasket() : null;

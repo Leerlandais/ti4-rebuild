@@ -41,3 +41,4 @@ function isValidEmail(mail) {
 }
 
 validateForm();
+

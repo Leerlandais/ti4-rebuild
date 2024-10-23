@@ -69,13 +69,13 @@ function buildArticleGrid(datas, grid) {
     }
 
     let soldDatas = JSON.parse(localStorage.getItem("SOLD"));
-
     let remaining = 0;
     datas.forEach(data => {
         showTest ? logThis("Creating window for "+data["item"]) : null
         for (i = 0; i < soldDatas.length; i++) {
             if (soldDatas[i]["id"] === data["id"]) {
-               remaining = parseInt(remaining = data["amount"]) - parseInt((soldDatas[i].sold));
+
+               remaining = parseInt(data["amount"]) - parseInt((soldDatas[i].sold));
                showTest ? logThis("Calculating remaining items : "+remaining) : null;
             }
         }
@@ -127,6 +127,7 @@ function buildArticleGrid(datas, grid) {
     });
 
     showTest ? logThis("Article Grid built with "+datas.length+" windows", true) : null;
+
 }
 
 
