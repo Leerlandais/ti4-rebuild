@@ -36,12 +36,32 @@ function disableCheckout() {
 
 // Preparation of unified basket (Chair, Chair, Bed, Chair => Chair * 3, Bed)
 function prepareUnifiedBasket() {
-    let origBasket = localStorage.getItem("BASKET");
-    showTest ? logThis("Original Basket: " + origBasket): null;
+
+    let origBasket = JSON.parse(localStorage.getItem("BASKET") || "[]");
+    showTest ? logThis("Original Basket: " + JSON.stringify(origBasket)): null;
     // If user has gotten to this page by fiddling with URL, send him home
-    if(origBasket === null || origBasket === undefined) {
+    if(origBasket.length === 0) {
         window.location.replace("?route=home");
+    }else{
+        // Calculate occurrences of each item
+        const occurrences = origBasket.reduce((item, currentItem) => {
+            const key = JSON.stringify(currentItem);
+            item[key] = (item[key] || 0) + 1;
+            return item;
+        }, {});
+
+        // Create uniqueBasket by mapping keys and add occurs value
+        const uniqueBasket = Object.keys(occurrences).map(key => {
+            const item = JSON.parse(key);
+            return {
+                ...item,
+                occurs: occurrences[key]
+            };
+        });
+
+        showTest ? logThis("Compressed Basket: "+ JSON.stringify(uniqueBasket)): null;
     }
+
 }
 
 basketSize ? drawBasket() : null;
