@@ -50,6 +50,7 @@ function buildByCatSelection(datas, category) {
     // change header accordingly
     const artGridHeader = document.getElementById("article_grid_header");
     artGridHeader.textContent = category;
+    document.getElementById("reco_grid_hide") ? document.getElementById("reco_grid_hide").remove() : null;
     // create the new grid
     buildArticleGrid(articleList, "article_grid");
 }

@@ -21,10 +21,12 @@ function handleJsonData(datas, direction, extra) {
             buildByCatSelection(datas, extra);
             break;
         case "article_grid" :
+            // for the article grid, only the last 4 items added to the JSON are needed
             const artData = datas.slice((datas.length -4),datas.length);
             buildArticleGrid(artData,direction);
             break;
         case "recommended_grid" :
+            // to guarantee uniqueness between grids, first remove the 'new arrivals'
             const data = datas.slice((datas.length -4),datas.length);
             const restData = datas.filter(item => !data.includes(item));
             const shuffledData = restData.sort((a, b) => 0.5 - Math.random());
@@ -36,7 +38,7 @@ function handleJsonData(datas, direction, extra) {
             break;
     }
 }
-if (document.getElementById("article_grid")) {
+if (document.getElementById("article_grid") && document.getElementById("recommended_grid")) {
     // only activated if art_grid is present (therefore current page = homepage)
     getProductJson("categoryBuild");
     getProductJson("article_grid");
