@@ -12,6 +12,7 @@ currentLogSetting.textContent = showTest;
 
 function toggleLogs(){
     showTest = !showTest;
+    console.log("CHANGING TEST LEVEL");
     localStorage.setItem("TESTS", JSON.stringify(showTest));
     currentLogSetting.textContent = showTest;
     showTest ? logThis("Logging Activated", true) : null;

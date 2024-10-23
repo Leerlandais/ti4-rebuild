@@ -34,3 +34,11 @@ function addItemToStorage(data) {
     addedItemAdjuster(item);
 
 }
+
+function createNewStorage() {
+    if(confirm("Are you sure you want to reset the Storage?")) {
+        localStorage.clear();
+        location.replace("?route=home");
+
+    }
+}

@@ -3,9 +3,14 @@ const basketSize = document.getElementById("basketSize") ? document.getElementBy
 document.getElementById("checkout_grid") ? prepareUnifiedBasket() : null
 
 function drawBasket() {
-    showTest ? logThis("Setting checkout button length to : "+JSON.parse(localStorage.getItem("BASKET")).length) : null;
-    basketSize.textContent = localStorage.getItem("BASKET") ? JSON.parse(localStorage.getItem("BASKET")).length : "0";
-    if (basketSize.textContent === "50") disableCheckout();
+    let basketLength = localStorage.getItem("BASKET") ? JSON.parse(localStorage.getItem("BASKET")).length : 0;
+    showTest ? logThis("Setting checkout button length to : "+basketLength) || 0 : null;
+    basketSize.textContent = basketLength;
+    if (basketSize.textContent === "50" || basketLength === 0) {
+        disableCheckout();
+    }else {
+        document.getElementById("checkoutButton").classList.remove("isDisabled");
+    }
 }
 
 function addedItemAdjuster(item) {
@@ -31,6 +36,7 @@ function addedItemAdjuster(item) {
 
 // I'll apply this later to limit basket size
 function disableCheckout() {
+    document.getElementById("checkoutButton").classList.add("isDisabled");
     console.log("Disabled Checkout");
 }
 

@@ -1,5 +1,5 @@
 function getProductJson(direction, extra=null){
-    showTest ? logThis("Fetching JSON data", true, "JSON") : null;
+    showTest ? logThis("Fetching JSON data for "+direction.toUpperCase()) : null;
     fetch("js/products.json")
         .then(function(response) {
             return response.json();
@@ -38,9 +38,14 @@ function handleJsonData(datas, direction, extra) {
             break;
     }
 }
-if (document.getElementById("article_grid") && document.getElementById("recommended_grid")) {
-    // only activated if art_grid is present (therefore current page = homepage)
-    getProductJson("categoryBuild");
-    getProductJson("article_grid");
-    getProductJson("recommended_grid");
+if (!localStorage.getItem("SOLD")) {
+    showTest ? logThis("No local storage found. Creating a new one", true) : null;
+    getProductJson("storageSold");
 }
+    if (document.getElementById("article_grid") && document.getElementById("recommended_grid")) {
+        // only activated if art_grid is present (therefore current page = homepage)
+        getProductJson("categoryBuild");
+        getProductJson("article_grid");
+        getProductJson("recommended_grid");
+    }
+
