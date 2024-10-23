@@ -12,6 +12,7 @@ function getProductJson(direction, extra=null){
 }
 
 function handleJsonData(datas, direction, extra) {
+    // check which function asked for JSON and act accordingly
     switch (direction) {
         case "categoryBuild" :
             buildCategoryGrid(datas);
@@ -32,10 +33,12 @@ function handleJsonData(datas, direction, extra) {
             break;
         case "storageSold" :
             createSoldItems(datas);
-            break
+            break;
     }
 }
-
-getProductJson("categoryBuild");
-getProductJson("article_grid");
-getProductJson("recommended_grid");
+if (document.getElementById("article_grid")) {
+    // only activated if art_grid is present (therefore current page = homepage)
+    getProductJson("categoryBuild");
+    getProductJson("article_grid");
+    getProductJson("recommended_grid");
+}

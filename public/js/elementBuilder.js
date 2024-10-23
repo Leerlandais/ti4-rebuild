@@ -44,9 +44,13 @@ function buildCategoryGrid(datas) {
 
 function buildByCatSelection(datas, category) {
     showTest ? logThis("Building By Selected Category :"+category, true) : null;
+    // filter list to retrieve category matches only
     let articleList = datas.filter(data => data["cat"] === category);
     showTest ? logThis("Filtered data :"+JSON.stringify(articleList), false, `Articles in ${category} category`) : null;
-
+    // change header accordingly
+    const artGridHeader = document.getElementById("article_grid_header");
+    artGridHeader.textContent = category;
+    // create the new grid
     buildArticleGrid(articleList, "article_grid");
 }
 

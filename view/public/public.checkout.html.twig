@@ -57,7 +57,7 @@
 
                     </tr>
                     </thead>
-                    <tbody class="text-blue-gray-900" id="table_grid">
+                    <tbody class="text-blue-gray-900" id="checkout_grid">
 
 
 
@@ -75,8 +75,7 @@
             </div>
             <form action="">
                 <button id="submitButton"
-                        class="block w-full py-3 px-4 text-center text-white bg-primary border border-primary rounded-md hover:bg-transparent hover:text-primary transition font-medium">Place
-                    order</button>
+                        class="block w-full py-3 px-4 text-center text-white bg-primary border border-primary rounded-md hover:bg-transparent hover:text-primary transition font-medium">Complete the delivery form to continue</button>
             </form>
             <div class="text-center text-green-600 flex w-full justify-center pt-4">
         <a href="?route=home">Return to Shop</a>
@@ -90,8 +89,10 @@
 {% block footer %}
 {% endblock %}
 {% block scripts %}
-    <script src="js/showTest.js"></script>
-    <script src="js/localStorageHandler.js"></script>
-    <script src="js/checkoutHandler.js"></script>
-    <script src="js/formValidation.js"></script>
+    <script src="{{ PUB_DIR }}js/consoleLogger.js"></script>
+    <script src="{{ PUB_DIR }}js/jsonHandler.js"></script>
+    <script src="{{ PUB_DIR }}js/storageHandler.js"></script>
+    <script src="{{ PUB_DIR }}js/elementBuilder.js"></script>
+    <script src="{{ PUB_DIR }}js/formValidator.js"></script>
+    <script src="{{ PUB_DIR }}js/basketHandler.js"></script>
 {% endblock %}

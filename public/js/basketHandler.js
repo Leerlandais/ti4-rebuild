@@ -1,4 +1,6 @@
-const basketSize = document.getElementById("basketSize");
+const basketSize = document.getElementById("basketSize") ? document.getElementById("basketSize") : null;
+// if grid exists, this must be the checkout page : act accordingly
+document.getElementById("checkout_grid") ? prepareUnifiedBasket() : null
 
 function drawBasket() {
     showTest ? logThis("Setting checkout button length to : "+JSON.parse(localStorage.getItem("BASKET")).length) : null;
@@ -27,8 +29,19 @@ function addedItemAdjuster(item) {
 
 }
 
+// I'll apply this later to limit basket size
 function disableCheckout() {
     console.log("Disabled Checkout");
 }
 
-drawBasket();
+// Preparation of unified basket (Chair, Chair, Bed, Chair => Chair * 3, Bed)
+function prepareUnifiedBasket() {
+    let origBasket = localStorage.getItem("BASKET");
+    showTest ? logThis("Original Basket: " + origBasket): null;
+    // If user has gotten to this page by fiddling with URL, send him home
+    if(origBasket === null || origBasket === undefined) {
+        window.location.replace("?route=home");
+    }
+}
+
+basketSize ? drawBasket() : null;
