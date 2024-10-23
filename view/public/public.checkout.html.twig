@@ -61,11 +61,7 @@
 
 
 
-                        <td class="py-3 px-4">
-                            <button><img src="/public/images/icons/removeItem.svg" alt="X" class="h-6 h-6"></button>
-                        </td>
 
-                    </tr>
 
 
 
@@ -89,10 +85,7 @@
 {% block footer %}
 {% endblock %}
 {% block scripts %}
-    <script src="{{ PUB_DIR }}js/consoleLogger.js"></script>
-    <script src="{{ PUB_DIR }}js/jsonHandler.js"></script>
-    <script src="{{ PUB_DIR }}js/storageHandler.js"></script>
-    <script src="{{ PUB_DIR }}js/elementBuilder.js"></script>
+    {{ parent() }}
     <script src="{{ PUB_DIR }}js/formValidator.js"></script>
-    <script src="{{ PUB_DIR }}js/basketHandler.js"></script>
+
 {% endblock %}

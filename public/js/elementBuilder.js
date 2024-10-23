@@ -150,3 +150,23 @@ function disableButton(id, item) {
     showTest ? logThis("Article "+item+" marked out of stock", true) : null;
 }
 
+function createCheckoutBasket(datas){
+   let checkoutGrid = document.getElementById("checkout_grid");
+   showTest ? logThis("Emptying Checkout Grid", true) : null
+   // make sure table grid is empty (even though it is)
+    while (checkoutGrid.firstChild) {
+        checkoutGrid.removeChild(checkoutGrid.firstChild);
+    }
+    if (datas === null || datas === undefined || datas.length < 1) {
+        showTest ? logThis("Empty basket detected") : null;
+        const tr = document.createElement("tr");
+        tr.classList.add("border-b", "border-blue-gray-200");
+        tr.innerHTML = `<td class="py-3 px-4 font-medium text-center" colspan="7"><a href="?route=home">Basket is Empty</a></td`
+        checkoutGrid.appendChild(tr);
+        console.log(checkoutGrid);
+        showTest ? logThis("Checkout creation completed with empty basket message", true) : null;
+        return;
+    }
+    let finalPrice = 0;
+}
+

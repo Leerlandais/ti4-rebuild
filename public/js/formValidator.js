@@ -34,6 +34,10 @@ function validateForm() {
         if (element.id === "phone" && !isValidPhone(element.value)) {
             allValid = false;
         }
+
+        if (!testBasketLength()) {
+            allValid = false;
+        }
     });
     submitButton.disabled = !allValid;
     if (submitButton.disabled) {
@@ -58,5 +62,9 @@ function isValidPhone(phone) {
     return num.test(phone.replace(/ /g, ""));
 }
 
+function testBasketLength() {
+    // don't permit submission if basket is empty
+    return localStorage.getItem("BASKET");
+}
 validateForm();
 

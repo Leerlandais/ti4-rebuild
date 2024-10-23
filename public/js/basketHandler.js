@@ -1,6 +1,9 @@
 const basketSize = document.getElementById("basketSize") ? document.getElementById("basketSize") : null;
 // if grid exists, this must be the checkout page : act accordingly
-document.getElementById("checkout_grid") ? prepareUnifiedBasket() : null
+if(document.getElementById("checkout_grid")) {
+        const basket = prepareUnifiedBasket();
+        createCheckoutBasket(basket);
+}
 
 function drawBasket() {
     let basketLength = localStorage.getItem("BASKET") ? JSON.parse(localStorage.getItem("BASKET")).length : 0;
@@ -55,7 +58,7 @@ function prepareUnifiedBasket() {
     showTest ? logThis("Original Basket: " + JSON.stringify(origBasket)): null;
     // If user has gotten to this page by fiddling with URL, send him home
     if(origBasket.length === 0) {
-        window.location.replace("?route=home");
+   //     window.location.replace("?route=home");
     }else{
         // Calculate occurrences of each item
         const occurrences = origBasket.reduce((item, currentItem) => {
@@ -74,7 +77,7 @@ function prepareUnifiedBasket() {
         });
 
         showTest ? logThis("Compressed Basket: "+ JSON.stringify(uniqueBasket)): null;
-//return(uniqueBasket);
+return(uniqueBasket);
     }
 }
 

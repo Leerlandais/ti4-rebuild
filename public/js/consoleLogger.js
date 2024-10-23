@@ -1,8 +1,8 @@
 // Assigns stored value to showTest or creates entry if needed
 let showTest = JSON.parse(localStorage.getItem("TESTS"));
 if (showTest === undefined || showTest === null) {
-    localStorage.setItem("TESTS", JSON.stringify(true));
-    showTest = true;
+    localStorage.setItem("TESTS", JSON.stringify(false));
+    showTest = false;
 }else{
     showTest = JSON.parse(localStorage.getItem("TESTS"));
 }
