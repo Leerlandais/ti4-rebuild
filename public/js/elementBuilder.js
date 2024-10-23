@@ -163,10 +163,33 @@ function createCheckoutBasket(datas){
         tr.classList.add("border-b", "border-blue-gray-200");
         tr.innerHTML = `<td class="py-3 px-4 font-medium text-center" colspan="7"><a href="?route=home">Basket is Empty</a></td`
         checkoutGrid.appendChild(tr);
-        console.log(checkoutGrid);
         showTest ? logThis("Checkout creation completed with empty basket message", true) : null;
         return;
     }
+
     let finalPrice = 0;
+    datas.forEach((data) => {
+        finalPrice += parseInt(data.price);
+        let fullPrice = parseInt(data.price) * parseInt(data.occurs);
+        // create the basket table
+        const tr = document.createElement("tr");
+        tr.classList.add("border-b", "border-blue-gray-200", "text-center");
+        tr.innerHTML = `<td class="py-3 px-4 text-center">${data.item}</td>
+                        <td class="py-3 px-4 text-center">€${data.price}</td>
+                        <td class="py-3 px-4 text-center">${data.occurs}</td>
+                        <td class="py-3 px-4 text-center">€${fullPrice}</td>
+                        <td class="py-3 px-4">
+                            <button onclick="increaseBasket(${data.id})"><img src="/public/images/icons/arrow-up.svg" alt="X" class="h-6 h-6"></button>
+                        </td>
+                        <td class="py-3 px-4">
+                            <button onclick="deleteFromBasket(${data.id})"><img src="/public/images/icons/removeItem.svg" alt="X" class="h-6 h-6"></button>
+                        </td>
+                        <td class="py-3 px-4">
+                            <button onclick="decreaseBasket(${data.id})"><img src="/public/images/icons/arrow-down.svg" alt="X" class="h-6 h-6"></button>
+                        </td>
+`
+        showTest ? logThis("Price Table created :", false, "tr") : null;
+        checkoutGrid.appendChild(tr);
+    });
 }
 
