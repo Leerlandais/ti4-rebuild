@@ -2,8 +2,10 @@
 const checkoutForm = document.getElementById("checkoutForm");
 const formElements = checkoutForm.querySelectorAll("input");
 const formData = {};
-
 const submitButton = document.getElementById("submitButton");
+
+ showTest ? logThis("Submit button has been disabled until completion of form", true) : null;
+
 submitButton.addEventListener("click", (e) => {
     removeBasket(currentBasket);
     alert("Your order has been successfully submitted!");
@@ -29,15 +31,31 @@ function validateForm() {
         if (element.type === "email" && !isValidEmail(element.value)) {
             allValid = false;
         }
+        if (element.id === "phone" && !isValidPhone(element.value)) {
+            allValid = false;
+        }
     });
     submitButton.disabled = !allValid;
-    submitButton.disabled ? submitButton.style.opacity = "0.5" : submitButton.style.opacity = "1";
-    submitButton.disabled ? submitButton.textContent = "Complete the delivery form to continue" : "Place Order";
+    if (submitButton.disabled) {
+        submitButton.style.opacity = "0.5";
+        submitButton.textContent = "Complete the delivery form to continue";
+    }else{
+        submitButton.style.opacity = "1";
+        submitButton.textContent = "Submit Order";
+        showTest ? logThis("Submit Button has been activated", true) : null;
+    }
 }
 
 function isValidEmail(mail) {
+    // verify that the email seems valid
     const email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return email.test(mail);
+}
+
+function isValidPhone(phone) {
+    // verify that the phone number seems valid
+    const num = /^[0-9]{10}$/;
+    return num.test(phone.replace(/ /g, ""));
 }
 
 validateForm();
