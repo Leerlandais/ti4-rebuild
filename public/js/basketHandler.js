@@ -6,8 +6,10 @@ function drawBasket() {
     let basketLength = localStorage.getItem("BASKET") ? JSON.parse(localStorage.getItem("BASKET")).length : 0;
     showTest ? logThis("Setting checkout button length to : "+basketLength) || 0 : null;
     basketSize.textContent = basketLength;
-    if (basketSize.textContent === "50" || basketLength === 0) {
+    if ( basketLength === 0) {
         disableCheckout();
+    }else if(basketLength > 49) {
+        forceCheckout();
     }else {
         document.getElementById("checkoutButton").classList.remove("isDisabled");
     }
@@ -38,6 +40,12 @@ function addedItemAdjuster(item) {
 // I'll apply this later to limit basket size
 function disableCheckout() {
     document.getElementById("checkoutButton").classList.add("isDisabled");
+}
+
+// If basket limit is reached, force user to checkout
+function forceCheckout() {
+    alert("You have reached maximum basket size. You will now be redirected to the checkout");
+    location.replace("?route=checkout");
 }
 
 // Preparation of unified basket (Chair, Chair, Bed, Chair => Chair * 3, Bed)
