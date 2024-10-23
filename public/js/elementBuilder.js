@@ -79,6 +79,16 @@ function buildArticleGrid(datas, grid) {
                showTest ? logThis("Calculating remaining items : "+remaining) : null;
             }
         }
+        // if there are items in the basket, adjust the remaining amount
+        if (localStorage.getItem("BASKET")){
+            const currentBasket = JSON.parse(localStorage.getItem("BASKET"));
+            currentBasket.forEach((item) => {
+                if (parseInt(item.id) === parseInt(data.id)) {
+                    remaining--;
+                }
+            })
+
+        }
         data.saved = parseInt(data.price) - parseInt(data.priceRed);
         // Parent Div for each element
         const divExt = document.createElement("div");
@@ -123,11 +133,20 @@ function buildArticleGrid(datas, grid) {
         divLink.appendChild(divBtn);
         divExt.appendChild(divLink);
 
-        currentGrid.appendChild(divExt)
+        currentGrid.appendChild(divExt);
+        // in case the user has returned to this screen, or refreshed it, make sure buttons are disable where necessary
+        if (remaining === 0) disableButton(data.id, data.item);
     });
 
     showTest ? logThis("Article Grid built with "+datas.length+" windows", true) : null;
 
 }
 
+function disableButton(id, item) {
+    const cartBtn = document.getElementById("ITEM"+id);
+    cartBtn.disabled = true;
+    cartBtn.textContent = "Sold Out!";
+    cartBtn.style.opacity = "0.5";
+    showTest ? logThis("Article "+item+" marked out of stock", true) : null;
+}
 
