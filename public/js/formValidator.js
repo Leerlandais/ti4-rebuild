@@ -59,7 +59,7 @@ function isValidEmail(mail) {
 
 function isValidPhone(phone) {
     // verify that the phone number seems valid
-    const num = /^[0-9]{10}$/;
+    const num = /^[0-9]{8,12}$/;
     return num.test(phone.replace(/ /g, ""));
 }
 

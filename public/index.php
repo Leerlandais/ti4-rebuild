@@ -18,9 +18,6 @@ $loader = new FilesystemLoader(PROJECT_DIRECTORY.'/view/');
 $twig = new Environment($loader, [
   'debug' => true,
 ]);
-$twig->addExtension(new \Twig\Extension\DebugExtension());
-
-$twig->addGlobal('PUB_DIR', PUB_DIR);
 
 /*
 // Prod version
@@ -31,6 +28,9 @@ $twig = new Environment($loader, [
 // no DebugExtension online
 */
 
+$twig->addExtension(new \Twig\Extension\DebugExtension());
+
+$twig->addGlobal('PUB_DIR', PUB_DIR);
 
 /* NO DB FOR THIS PROJECT (AT THE CURRENT TIME)
 try {
