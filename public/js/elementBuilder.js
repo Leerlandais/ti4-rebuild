@@ -1,4 +1,4 @@
-
+const checkoutGrid = document.getElementById("checkout_grid");
 function buildCategoryGrid(datas) {
     showTest ? logThis("Building Category Grid", true) : null;
     // Retrieve parent
@@ -150,7 +150,7 @@ function disableButton(id, item) {
 }
 
 function    createCheckoutBasket(datas){
-   let checkoutGrid = document.getElementById("checkout_grid");
+   const checkoutGrid = document.getElementById("checkout_grid");
    showTest ? logThis("Emptying Checkout Grid", true) : null
    // make sure table grid is empty (even though it is)
     while (checkoutGrid.firstChild) {
@@ -197,8 +197,9 @@ function    createCheckoutBasket(datas){
             disableThisButton.disabled = true;
         }
     });
-}
 
+    createTotalPriceGrid(datas);
+}
 
 function  checkSoldAmount(data) {
     // for each increase button created, check if total current items exceeds amount in stock - disable if true
@@ -208,8 +209,29 @@ function  checkSoldAmount(data) {
             let totalSold = parseInt(soldDatas[i]["sold"]) + parseInt(data.occurs);
             // returns boolean response
             return totalSold > (data["amount"] - 1);
-
         }
     }
-    console.log("Check Sold Amount for :", data);
+}
+
+function createTotalPriceGrid(datas) {
+    let finalPrice = 0;
+    showTest ? logThis("Calculating total price and creating Table", true) : null;
+    datas.forEach((data) => {
+        finalPrice += (parseInt(data.price) * parseInt(data.occurs));
+        showTest ? logThis('Current total : '+finalPrice, false, "int"): null;
+        const trPrice = document.createElement("tr");
+
+        if (document.querySelector(".tempRemove")) {
+            const tempRemove =  document.querySelector(".tempRemove");
+            showTest ? logThis("Removing unnecessary element : "+ tempRemove) : null;
+            checkoutGrid.removeChild(tempRemove);
+        }
+        trPrice.classList.add("border-b", "border-blue-gray-200", "tempRemove");
+        trPrice.innerHTML = `<td class="py-3 px-4 font-medium" colspan="3">Total Wallet Value</td>
+                        <td class="py-3 px-8 font-medium text-left" colspan="4">€${finalPrice}</td>`
+        showTest ? logThis("Total Price Section created :"+ trPrice, false, "object") : null;
+        checkoutGrid.appendChild(trPrice);
+    });
+
+    showTest ? logThis("Price Table Creation Complete", true) : null;
 }
