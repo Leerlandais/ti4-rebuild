@@ -7,7 +7,6 @@ const submitButton = document.getElementById("submitButton");
  showTest ? logThis("Submit button has been disabled until completion of form", true) : null;
 
 submitButton.addEventListener("click", (e) => {
-    e.preventDefault();
     completeCheckoutOperation();
     alert("Your order has been successfully submitted!");
 
@@ -40,8 +39,8 @@ function validateForm() {
             allValid = false;
         }
     });
-    console.log("change this back to !allValid once done");
-    submitButton.disabled = allValid;
+
+    submitButton.disabled = !allValid;
     if (submitButton.disabled) {
         submitButton.style.opacity = "0.5";
         submitButton.textContent = "Complete the delivery form to continue";
