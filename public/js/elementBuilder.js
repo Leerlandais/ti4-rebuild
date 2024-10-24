@@ -201,11 +201,13 @@ function    createCheckoutBasket(datas){
 
 
 function  checkSoldAmount(data) {
+    // for each increase button created, check if total current items exceeds amount in stock - disable if true
     const soldDatas = JSON.parse(localStorage.getItem("SOLD"));
     for (i = 0; i < soldDatas.length; i++) {
         if (parseInt(soldDatas[i]["id"]) === parseInt(data["id"])) {
             let totalSold = parseInt(soldDatas[i]["sold"]) + parseInt(data.occurs);
-            return totalSold > 49;
+            // returns boolean response
+            return totalSold > (data["amount"] - 1);
 
         }
     }
