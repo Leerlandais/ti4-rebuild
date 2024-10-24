@@ -56,8 +56,7 @@ function buildByCatSelection(datas, category) {
 }
 
 function buildArticleGrid(datas, grid) {
-    showTest ? logThis("Building Article Grid", true) : null;
-    showTest ? logThis("Grid : "+grid, false, "string") : null;
+    showTest ? logThis("Building "+grid, true) : null;
     // Select the relevant grid
     const currentGrid = document.getElementById(grid);
     // Assure that it's empty
@@ -179,7 +178,7 @@ function    createCheckoutBasket(datas){
                         <td class="py-3 px-4 text-center">${data.occurs}</td>
                         <td class="py-3 px-4 text-center">€${fullPrice}</td>
                         <td class="py-3 px-4">
-                            <button onclick="increaseBasket(${data.id})"><img src="/public/images/icons/arrow-up.svg" alt="X" class="h-6 h-6"></button>
+                            <button onclick="increaseBasket(${data.id})" id="increaseBtn${data.id}"><img src="/public/images/icons/arrow-up.svg" alt="X" class="h-6 h-6"></button>
                         </td>
                         <td class="py-3 px-4">
                             <button onclick="deleteFromBasket(${data.id})"><img src="/public/images/icons/removeItem.svg" alt="X" class="h-6 h-6"></button>
@@ -190,6 +189,25 @@ function    createCheckoutBasket(datas){
 `
             showTest ? logThis("Price Table created :", false, "tr") : null;
         checkoutGrid.appendChild(tr);
+
+
+        if (checkSoldAmount(data)) {
+            showTest ? logThis("Maximum sold amount detected, increase button disabled", true) : null;
+            const disableThisButton = document.getElementById(`increaseBtn${data.id}`)
+            disableThisButton.disabled = true;
+        }
     });
 }
 
+
+function  checkSoldAmount(data) {
+    const soldDatas = JSON.parse(localStorage.getItem("SOLD"));
+    for (i = 0; i < soldDatas.length; i++) {
+        if (parseInt(soldDatas[i]["id"]) === parseInt(data["id"])) {
+            let totalSold = parseInt(soldDatas[i]["sold"]) + parseInt(data.occurs);
+            return totalSold > 49;
+
+        }
+    }
+    console.log("Check Sold Amount for :", data);
+}
