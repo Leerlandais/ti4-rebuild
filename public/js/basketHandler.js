@@ -53,7 +53,7 @@ function forceCheckout() {
 
 // Preparation of unified basket (Chair, Chair, Bed, Chair => Chair * 3, Bed)
 function prepareUnifiedBasket() {
-
+    showTest ? logThis("Creating compressed basket for checkout", true) : null;
     let origBasket = JSON.parse(localStorage.getItem("BASKET") || "[]");
     showTest ? logThis("Original Basket: " + JSON.stringify(origBasket)): null;
     // If user has gotten to this page by fiddling with URL, send him home
@@ -79,6 +79,21 @@ function prepareUnifiedBasket() {
         showTest ? logThis("Compressed Basket: "+ JSON.stringify(uniqueBasket)): null;
 return(uniqueBasket);
     }
+}
+
+function increaseBasket(data){
+    showTest ? logThis("Increasing Item Count "+ data) : null;
+    const basket = prepareUnifiedBasket();
+    let j = 0;
+    for (let i = 0; i < basket.length; i++) {
+        if (parseInt(basket[i].id) === data) {
+            showTest ? logThis("Found matching item : "+ basket[i].item +". Increasing amount to "+(basket[i].occurs + 1)) : null;
+            basket[i].occurs = basket[i].occurs + 1;
+            j = i;
+        }
+    console.log(`${basket[j].id}, ${basket[j].cat}, ${basket[j].item}, ${basket[j].price},${basket[j].saved}, ${basket[j].amount}`);
+    }
+    addItemToStorage(`${basket[j].id}, ${basket[j].cat}, ${basket[j].item}, ${basket[j].price},${basket[j].saved}, ${basket[j].amount}`);
 }
 
 basketSize ? drawBasket() : null;

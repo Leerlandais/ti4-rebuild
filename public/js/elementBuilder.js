@@ -92,36 +92,36 @@ function buildArticleGrid(datas, grid) {
         data.saved = parseInt(data.price) - parseInt(data.priceRed);
         // Parent Div for each element
         const divExt = document.createElement("div");
-        divExt.classList.add("bg-white", "shadow", "rounded", "overflow-hidden", "group",);
+            divExt.classList.add("bg-white", "shadow", "rounded", "overflow-hidden", "group",);
         // Div to hold the image
         const divImg = document.createElement("div");
-        divImg.classList.add("relative");
-        divImg.innerHTML = `<img src="${data['img']}" alt="${data.item}">`
-        divExt.appendChild(divImg);
+            divImg.classList.add("relative");
+            divImg.innerHTML = `<img src="${data['img']}" alt="${data.item}">`
+                divExt.appendChild(divImg);
         // Div to hold product info
         const divLink = document.createElement("div");
-        divLink.classList.add("pt-4", "pb-3", "px-4",);
+            divLink.classList.add("pt-4", "pb-3", "px-4",);
         const link = document.createElement("a");
-        link.innerHTML = `<h4 class="uppercase font-medium 
+            link.innerHTML = `<h4 class="uppercase font-medium 
                                          text-xl mb-2 text-gray-800 
                                          hover:text-primary transition"
                               > ${data["item"]}
                               </h4>`
-        divLink.appendChild(link);
+                divLink.appendChild(link);
         const divPrice = document.createElement("div");
-        divPrice.classList.add("flex", "items-baseline", "mb-1", "space-x-2");
-        divPrice.innerHTML = `<p class="text-xl text-primary font-semibold">€ ${data["priceRed"]}</p>
+            divPrice.classList.add("flex", "items-baseline", "mb-1", "space-x-2");
+            divPrice.innerHTML = `<p class="text-xl text-primary font-semibold">€ ${data["priceRed"]}</p>
                               <p class="text-sm text-gray-400 line-through">€ ${data["price"]}</p>`
-        divLink.appendChild(divPrice);
+                divLink.appendChild(divPrice);
         // Div to display remaining articles
         const divLeft = document.createElement("div");
-        divLeft.classList.add("flex", "items-center");
-        divLeft.innerHTML = `<div class="text-xs text-gray-500 ml-3">Remaining : <span id="amt${data['id']}">${remaining}</span></div>`;
+            divLeft.classList.add("flex", "items-center");
+            divLeft.innerHTML = `<div class="text-xs text-gray-500 ml-3">Remaining : <span id="amt${data['id']}">${remaining}</span></div>`;
         // attaché au parent(divLink)
-        divLink.appendChild(divLeft);
+                divLink.appendChild(divLeft);
         // Finalement, le div pour contenir le bouton (Add to Cart)
         const divBtn = document.createElement("div");
-        divBtn.innerHTML = `<button 
+            divBtn.innerHTML = `<button 
                                 class="block w-full py-1 text-center text-white 
                                        bg-primary border border-primary rounded-b 
                                        hover:bg-transparent hover:text-primary transition"
@@ -130,10 +130,10 @@ function buildArticleGrid(datas, grid) {
                                 > 
                                 Add to cart
                                 </button>`// add onclick here
-        divLink.appendChild(divBtn);
-        divExt.appendChild(divLink);
+                divLink.appendChild(divBtn);
+                divExt.appendChild(divLink);
 
-        currentGrid.appendChild(divExt);
+            currentGrid.appendChild(divExt);
         // in case the user has returned to this screen, or refreshed it, make sure buttons are disable where necessary
         if (remaining === 0) disableButton(data.id, data.item);
     });
@@ -144,15 +144,16 @@ function buildArticleGrid(datas, grid) {
 
 function disableButton(id, item) {
     const cartBtn = document.getElementById("ITEM"+id);
-    cartBtn.disabled = true;
-    cartBtn.textContent = "Sold Out!";
-    cartBtn.style.opacity = "0.5";
+        cartBtn.disabled = true;
+        cartBtn.textContent = "Sold Out!";
+        cartBtn.style.opacity = "0.5";
     showTest ? logThis("Article "+item+" marked out of stock", true) : null;
 }
 
-function createCheckoutBasket(datas){
+function    createCheckoutBasket(datas){
    let checkoutGrid = document.getElementById("checkout_grid");
    showTest ? logThis("Emptying Checkout Grid", true) : null
+    console.log("THIS CHECKOUT DATA :", datas);
    // make sure table grid is empty (even though it is)
     while (checkoutGrid.firstChild) {
         checkoutGrid.removeChild(checkoutGrid.firstChild);
@@ -160,10 +161,10 @@ function createCheckoutBasket(datas){
     if (datas === null || datas === undefined || datas.length < 1) {
         showTest ? logThis("Empty basket detected") : null;
         const tr = document.createElement("tr");
-        tr.classList.add("border-b", "border-blue-gray-200");
-        tr.innerHTML = `<td class="py-3 px-4 font-medium text-center" colspan="7"><a href="?route=home">Basket is Empty</a></td`
-        checkoutGrid.appendChild(tr);
-        showTest ? logThis("Checkout creation completed with empty basket message", true) : null;
+            tr.classList.add("border-b", "border-blue-gray-200");
+            tr.innerHTML = `<td class="py-3 px-4 font-medium text-center" colspan="7"><a href="?route=home">Basket is Empty</a></td`
+                checkoutGrid.appendChild(tr);
+            showTest ? logThis("Checkout creation completed with empty basket message", true) : null;
         return;
     }
 
@@ -173,8 +174,8 @@ function createCheckoutBasket(datas){
         let fullPrice = parseInt(data.price) * parseInt(data.occurs);
         // create the basket table
         const tr = document.createElement("tr");
-        tr.classList.add("border-b", "border-blue-gray-200", "text-center");
-        tr.innerHTML = `<td class="py-3 px-4 text-center">${data.item}</td>
+            tr.classList.add("border-b", "border-blue-gray-200", "text-center");
+            tr.innerHTML = `<td class="py-3 px-4 text-center">${data.item}</td>
                         <td class="py-3 px-4 text-center">€${data.price}</td>
                         <td class="py-3 px-4 text-center">${data.occurs}</td>
                         <td class="py-3 px-4 text-center">€${fullPrice}</td>
@@ -188,7 +189,7 @@ function createCheckoutBasket(datas){
                             <button onclick="decreaseBasket(${data.id})"><img src="/public/images/icons/arrow-down.svg" alt="X" class="h-6 h-6"></button>
                         </td>
 `
-        showTest ? logThis("Price Table created :", false, "tr") : null;
+            showTest ? logThis("Price Table created :", false, "tr") : null;
         checkoutGrid.appendChild(tr);
     });
 }

@@ -27,8 +27,12 @@ function addItemToStorage(data) {
     currentBasket.push(item);
     localStorage.setItem("BASKET", JSON.stringify(currentBasket));
     showTest ? logThis("New Basket size is "+JSON.parse(localStorage.getItem("BASKET")).length) : null;
-
-    addedItemAdjuster(item);
+    if (document.getElementById(`amt${item['id']}`)) {
+        addedItemAdjuster(item)
+    }else {
+        const basket = prepareUnifiedBasket()
+        createCheckoutBasket(basket);
+    }
 
 }
 
