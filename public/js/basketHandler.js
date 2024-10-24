@@ -108,4 +108,26 @@ function decreaseBasket(data){
     }
     deleteOneItemFromStorage(`${basket[j].id}`);
 }
+
+function deleteFromBasket(id) {
+
+    showTest ? logThis("Deleting this from basket : "+id, true) : null;
+    let origBasket = JSON.parse(localStorage.getItem("BASKET") || "[]");
+    const delResponse = confirm("Are you sure you want to delete this item?");
+        if(delResponse === null) {
+            return;
+        }
+    // filter basket keeping only items whose id don't match removed item
+    let newBasket = origBasket.filter(data => parseInt(data.id) !== id);
+
+    // erase and re-write the Basket
+    localStorage.removeItem("BASKET");
+    localStorage.setItem('BASKET', JSON.stringify(newBasket));
+
+    // recreate the checkout
+    const basket = prepareUnifiedBasket();
+    createCheckoutBasket(basket);
+
+}
+
 basketSize ? drawBasket() : null;
