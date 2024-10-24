@@ -53,3 +53,18 @@ function createNewStorage() {
     }
 }
 
+function completeCheckoutOperation() {
+    const finalBasket = prepareUnifiedBasket()
+    const soldDatas = JSON.parse(localStorage.getItem("SOLD"));
+    console.log(finalBasket);
+    console.log(soldDatas);
+    finalBasket.forEach((item) => {
+        for(let i = 0; i < soldDatas.length; i++) {
+            if(parseInt(soldDatas[i].id) === parseInt(item.id)) {
+                const newSold = soldDatas[i].sold + item.occurs;
+                console.log("new amount : ",newSold);
+            }
+        }
+    })
+
+}
