@@ -94,4 +94,18 @@ function increaseBasket(data){
     }
     addItemToStorage(`${basket[j].id},${basket[j].cat},${basket[j].item},${basket[j].price},${basket[j].saved},${basket[j].amount}`);
 }
+
+function decreaseBasket(data){
+    showTest ? logThis("Decreasing Item Count "+ data) : null;
+    const basket = prepareUnifiedBasket();
+    let j = 0;
+    for (let i = 0; i < basket.length; i++) {
+        if (parseInt(basket[i].id) === data) {
+            showTest ? logThis("Found matching item : "+ basket[i].item +". Decreasing amount to "+(basket[i].occurs - 1)) : null;
+            basket[i].occurs = basket[i].occurs - 1;
+            j = i;
+        }
+    }
+    deleteOneItemFromStorage(`${basket[j].id}`);
+}
 basketSize ? drawBasket() : null;

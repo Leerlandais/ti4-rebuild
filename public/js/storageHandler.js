@@ -34,7 +34,15 @@ function addItemToStorage(data) {
         const basket = prepareUnifiedBasket()
         createCheckoutBasket(basket);
     }
+}
 
+function deleteOneItemFromStorage(data) {
+    let currentBasket = JSON.parse(localStorage.getItem("BASKET"));
+    const remItem = currentBasket.findIndex(item => item.id === data);
+    currentBasket.splice(remItem, 1);
+    localStorage.setItem("BASKET", JSON.stringify(currentBasket));
+    const basket = prepareUnifiedBasket()
+    createCheckoutBasket(basket);
 }
 
 function createNewStorage() {
