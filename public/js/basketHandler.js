@@ -91,9 +91,7 @@ function increaseBasket(data){
             basket[i].occurs = basket[i].occurs + 1;
             j = i;
         }
-    console.log(`${basket[j].id}, ${basket[j].cat}, ${basket[j].item}, ${basket[j].price},${basket[j].saved}, ${basket[j].amount}`);
     }
-    addItemToStorage(`${basket[j].id}, ${basket[j].cat}, ${basket[j].item}, ${basket[j].price},${basket[j].saved}, ${basket[j].amount}`);
+    addItemToStorage(`${basket[j].id},${basket[j].cat},${basket[j].item},${basket[j].price},${basket[j].saved},${basket[j].amount}`);
 }
-
 basketSize ? drawBasket() : null;

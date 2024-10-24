@@ -20,6 +20,7 @@ function addItemToStorage(data) {
         "saved": data[4],
         "amount": data[5],
     };
+
     // add item to existing basket or create new one if needed
     showTest ? logThis("Adding "+item["item"]+" to the basket", true) : null;
     let currentBasket = JSON.parse(localStorage.getItem("BASKET")) || [];

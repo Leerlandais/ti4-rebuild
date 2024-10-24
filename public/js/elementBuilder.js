@@ -126,7 +126,7 @@ function buildArticleGrid(datas, grid) {
                                        bg-primary border border-primary rounded-b 
                                        hover:bg-transparent hover:text-primary transition"
                                 id="ITEM${data['id']}"
-                                onclick="addItemToStorage('${data.id}, ${data.cat}, ${data.item}, ${data.priceRed},${data.saved}, ${data.amount}')"
+                                onclick="addItemToStorage('${data.id},${data.cat},${data.item},${data.priceRed},${data.saved},${data.amount}')"
                                 > 
                                 Add to cart
                                 </button>`// add onclick here
@@ -153,7 +153,6 @@ function disableButton(id, item) {
 function    createCheckoutBasket(datas){
    let checkoutGrid = document.getElementById("checkout_grid");
    showTest ? logThis("Emptying Checkout Grid", true) : null
-    console.log("THIS CHECKOUT DATA :", datas);
    // make sure table grid is empty (even though it is)
     while (checkoutGrid.firstChild) {
         checkoutGrid.removeChild(checkoutGrid.firstChild);
