@@ -178,13 +178,13 @@ function    createCheckoutBasket(datas){
                         <td class="py-3 px-4 text-center">${data.occurs}</td>
                         <td class="py-3 px-4 text-center">€${fullPrice}</td>
                         <td class="py-3 px-4">
-                            <button onclick="increaseBasket(${data.id})" id="increaseBtn${data.id}"><img src="/public/images/icons/arrow-up.svg" alt="X" class="h-6 h-6"></button>
+                            <button onclick="increaseBasket(${data.id})" id="increaseBtn${data.id}"><img src="../public/images/icons/arrow-up.svg" alt="X" class="h-6 h-6"></button>
                         </td>
                         <td class="py-3 px-4">
-                            <button onclick="deleteFromBasket(${data.id})"><img src="/public/images/icons/removeItem.svg" alt="X" class="h-6 h-6"></button>
+                            <button onclick="deleteFromBasket(${data.id})"><img src="../public/images/icons/removeItem.svg" alt="X" class="h-6 h-6"></button>
                         </td>
                         <td class="py-3 px-4">
-                            <button onclick="decreaseBasket(${data.id})"><img src="/public/images/icons/arrow-down.svg" alt="X" class="h-6 h-6"></button>
+                            <button onclick="decreaseBasket(${data.id})"><img src="../public/images/icons/arrow-down.svg" alt="X" class="h-6 h-6"></button>
                         </td>
 `
             showTest ? logThis("Price Table created :", false, "tr") : null;
